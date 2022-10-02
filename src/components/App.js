@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import About from "./About";
@@ -11,8 +11,8 @@ import NotFound from "./NotFound";
 
 function App() {
     return (
-        <Router>
-            {{/* Add NavBar outside routes so it appears on top ofevery page */}}
+        <div>
+            {/* Add NavBar outside routes so it appears on top ofevery page */}
             <NavBar />
             <Routes>
               <Route exact path="/" element={<Home />} />
@@ -22,7 +22,7 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-        </Router>
+        </div>
     )
 }
 
